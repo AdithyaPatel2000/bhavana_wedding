@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --gold-primary: #d4af37;
+    --gold-light: #f7e2a9;
+    --gold-dark: #996515;
+    --maroon-dark: #2a080c;
+    --maroon-royal: #4e0f1a;
+    --maroon-accent: #781d28;
+    --cream-bg: #fffbf2;
+    --parchment: #fcf8ee;
+  }
+
+  body {
+    background-color: #140306;
+    color: #f7e9d7;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom fonts styling */
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-cinzel-dec {
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-vibes {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-telugu {
+  font-family: 'Mandali', 'Tiro Telugu', 'Suranna', 'Gautami', serif;
+}
+
+/* Gold Gradient Text & Borders */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #ffe082 0%, #dfb76c 25%, #fff1b8 50%, #c59b27 75%, #f5d77f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border-image: linear-gradient(135deg, #dfb76c, #ffe599, #c59b27, #dfb76c) 1;
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(223, 183, 108, 0.25), inset 0 0 15px rgba(223, 183, 108, 0.1);
+}
+
+.royal-box-shadow {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(184, 134, 11, 0.2);
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,215,0,0.4) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+
+/* Subtle float animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Slow spin animation for background sacred mandalas */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 40s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #140306;
+}
+::-webkit-scrollbar-thumb {
+  background: #781d28;
+  border-radius: 4px;
+  border: 1px solid #dfb76c;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #dfb76c;
+}
