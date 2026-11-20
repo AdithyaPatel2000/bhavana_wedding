@@ -15,6 +15,33 @@
     <meta property="og:title" content="Bhavana & Anush Kumar - Royal Wedding Invitation" />
     <meta property="og:description" content="We solicit your gracious presence with family and friends on 3rd December 2026 at Karimnagar." />
     <meta property="og:type" content="website" />
+    <style>
+      /* Hide any external badges or feedback drawers */
+      iframe[src*="netlify"],
+      [id*="netlify"],
+      [class*="netlify-badge"],
+      [data-netlify-badge] {
+        display: none !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        visibility: hidden !important;
+      }
+    </style>
+    <script>
+      // Immediately remove any injected badge elements
+      const badgeObserver = new MutationObserver((mutations) => {
+        document.querySelectorAll('iframe, div').forEach((el) => {
+          if (
+            (el.src && el.src.includes('netlify')) ||
+            (el.id && el.id.toLowerCase().includes('netlify')) ||
+            (el.className && typeof el.className === 'string' && el.className.toLowerCase().includes('netlify'))
+          ) {
+            el.remove();
+          }
+        });
+      });
+      badgeObserver.observe(document.documentElement, { childList: true, subtree: true });
+    </script>
   </head>
   <body class="bg-[#140306] text-[#f7e9d7] selection:bg-[#dfb76c] selection:text-[#1a0508]">
     <div id="root"></div>
